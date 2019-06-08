@@ -5,7 +5,7 @@
 ## Examples
 ```
 # Header
-This is a basic equation <<1+2*sqrt(2)-pi+alpha/(3.2-1)>>  
+This is a basic equation €1+2*sqrt(2)-pi+alpha/(3.2-1)€  
 More complex things can be done with latex:
 $$x\overset{\Bbb{R}}{+} y=x\overset{\Bbb{Q}}{+} y$$
 ```
