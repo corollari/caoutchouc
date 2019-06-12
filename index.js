@@ -8,6 +8,14 @@ const process = require('process');
 const inputFile = process.argv[process.argv.length - 1].replace(/tex$/, "md") //For TeXstudio
 //const inputFile = process.argv[process.argv.length - 1]
 
+let typesetter = "pdflatex"
+
+if(process.argv.includes("--tex")){
+	let pos=process.argv.indexOf("--tex")
+	typesetter=process.argv[pos+1]
+	process.argv.splice(pos, 2)
+}
+
 let input = fs.readFileSync(inputFile, 'utf-8')
 
 input=replaceLiteral(input, "€€")
@@ -30,7 +38,7 @@ const extension = filename.pop()
 
 fs.writeFileSync(filename+".cautex", result)
 
-child_process.spawnSync(path.basename(process.argv[2]), process.argv.slice(3,-1).concat([filename+".cautex"]))
+child_process.spawnSync(typesetter, process.argv.slice(2,-1).concat([filename+".cautex"]))
 
 function replaceLiteral(input, literal){
 	let position=input.indexOf(literal)
