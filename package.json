@@ -1,6 +1,6 @@
 {
   "name": "caou",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Caoutchouc compiler",
   "main": "index.js",
   "directories": {
@@ -17,9 +17,11 @@
     "url": "git+https://github.com/corollari/caoutchouc.git"
   },
   "files": [
-    "./index.js",
-    "./pandoc-filter.js",
-    "./lib/ASCIIMathTeXImg.js"
+    "package.jsonn",
+    "index.js",
+    "pandoc-filter.js",
+    "lib/ASCIIMathTeXImg.js",
+    "man/caou.1"
   ],
   "keywords": [
     "latex"
