@@ -17,18 +17,33 @@ const pandocFilterPath = path.join(__dirname, "pandoc-filter.js")
 
 let result = child_process.spawnSync("pandoc", ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks", "-s", "--filter", pandocFilterPath], { input: input }).stdout
 
+result=String(result)
+
+result=result.replace(/\$\$asciimath/g, "€€")
+result=result.replace(/\$asciimath/g, "€")
+result=result.replace(/asciimath\$\$/g, "€€")
+result=result.replace(/asciimath\$/g, "€")
+
+
 let filename = path.basename(inputFile).split(".")
 const extension = filename.pop()
 
-fs.writeFileSync(filename+".cautex", String(result))
+fs.writeFileSync(filename+".cautex", result)
 
 child_process.spawnSync(path.basename(process.argv[2]), process.argv.slice(3,-1).concat([filename+".cautex"]))
 
 function replaceLiteral(input, literal){
 	let position=input.indexOf(literal)
 	let first=true
+	const delimiter=literal.length==1?"$":"$$"
 	while(position != -1){
-		input=input.substring(0, position)+"\n\`\`\`"+(first?"asciimath"+String(literal.length):"")+"\n"+input.substring(position+1, input.length)
+		let newLiteral=""
+		if(first){
+			newLiteral=delimiter+"asciimath"
+		} else {
+			newLiteral="asciimath"+delimiter
+		}
+		input=input.substring(0, position)+newLiteral+input.substring(position+literal.length, input.length)
 		first=!first
 		position=input.indexOf(literal)
 	}

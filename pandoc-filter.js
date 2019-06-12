@@ -2,32 +2,21 @@
 
 const pandoc = require('pandoc-filter-promisified')
 const AsciiMath2Latex = require('./lib/ASCIIMathTeXImg.js')
-const { CodeBlock, RawBlock } = pandoc
+const { Formula } = pandoc
 
 const HEADER = "asciimath"
 
 pandoc.stdio(action)
 
 async function action(elt, pandocOutputFormat, meta) {
-  if (elt.t === `CodeBlock`) {
+  if (elt.t === `Math`) {
     // console.warn(JSON.stringify(elt, null, 4));
-    const [headers, content] = elt.c
+    const [mathType, content] = elt.c
 
-    const literalLength = getAsciiMathLiteral(headers)
-    if(literalLength === 0) return
+    if(!content.startsWith(HEADER)) return
 
-    const literal = literalLength==2?"$$":"$"
+    let newContent = AsciiMath2Latex(content.replace(/asciimath/g, ""))
 
-    let newContent = literal+AsciiMath2Latex(content)+literal
-
-    return RawBlock('latex', newContent)
+    return Formula(mathType, newContent)
   }
-}
-
-function getAsciiMathLiteral(headers) {
-  const [_, classes, keyValuePairs] = headers
-
-  if(classes.includes(HEADER+"1")) return 1
-  if(classes.includes(HEADER+"2")) return 2
-  return 0
 }
