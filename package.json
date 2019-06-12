@@ -9,10 +9,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "caoutchouc": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/corollari/caoutchouc.git"
   },
+  "files": [
+    "./index.js",
+    "./pandoc-filter.js",
+    "./lib/ASCIIMathTeXImg.js"
+  ],
   "keywords": [
     "latex"
   ],
