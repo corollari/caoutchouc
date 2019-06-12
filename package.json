@@ -24,6 +24,7 @@
   "keywords": [
     "latex"
   ],
+  "man": "./man/caou.1",
   "author": "corollari",
   "license": "MIT",
   "bugs": {

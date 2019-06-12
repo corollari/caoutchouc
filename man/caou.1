@@ -1,0 +1,44 @@
+.\" Process this file with
+.\" groff -man -Tascii caou.1
+.\"
+.TH CAOU 1 "JUNE 2019" Linux "General Commands Manual"
+.SH NAME
+caou \- compiler for caoutchouc, a typesetting and text formatting language
+.SH SYNOPSIS
+caou
+[\fB--tex \fItypesetter\fP]
+[\fIoptions\fP]
+[&\fIformat\fP]
+[\fIfile\fP]
+.SH DESCRIPTION
+.B caou
+compiles plain text (utf8 encoded) files written in
+the caoutchouc language to their pdf form, creating 
+.I file.pdf\fP.
+
+For a description and especification of the
+.B caoutchouc
+language, see <https://github.com/corollari/caoutchouc>.
+.SH OPTIONS
+.IP "--tex \fItypesetter"
+Use \fItypesetter\fP for pdf generation
+instead of \fBpdflatex\fP(1).
+.br
+Some typesetters that may be available in your system are 
+\fBxelatex\fP(1), \fBlualatex\fP(1),
+\fBlatex\fP(1) or \fBpdflatex\fP(1).
+.IP ...
+Any other option will be passed directly
+to the typesetter being used.
+.SH FILES
+See \fBpdftex\fP(1).
+.SH ENVIRONMENT
+See \fBpdftex\fP(1).
+.SH REPORTING BUGS
+Open a github issue: <https://github.com/corollari/caoutchouc/issues>
+or email the author at <me@albert.sh>.
+.SH AUTHOR
+Albert Acebron <me@albert.sh>.
+.SH "SEE ALSO"
+.BR pdftex (1),
+.BR latex (1)
