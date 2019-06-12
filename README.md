@@ -39,3 +39,7 @@ Cons:
 - Will require all latex code to be properly encapsulated
 - Further development will be harder
 
+## Acknowledgements
+- pandoc
+- The code used to convert asciimath to latex was taken from [here](https://github.com/asciimath/asciimathml/blob/master/asciimath-based/ASCIIMathTeXImg.js). For more information check the License text in `ASCIIMathTeXImg.js`.
+

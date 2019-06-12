@@ -1,0 +1,28 @@
+{
+  "name": "caoutchouc",
+  "version": "0.1.0",
+  "description": "Caoutchouc compiler",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corollari/caoutchouc.git"
+  },
+  "keywords": [
+    "latex"
+  ],
+  "author": "corollari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/corollari/caoutchouc/issues"
+  },
+  "homepage": "https://github.com/corollari/caoutchouc#readme",
+  "dependencies": {
+    "pandoc-filter-promisified": "^0.1.0"
+  }
+}
