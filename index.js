@@ -28,7 +28,7 @@ function replaceLiteral(input, literal){
 	let position=input.indexOf(literal)
 	let first=true
 	while(position != -1){
-		input=input.substring(0, position)+"\n\`\`\`"+(first?"asciimath"+String(literal.length):"")+"\n"+input.substring(position+2, input.length)
+		input=input.substring(0, position)+"\n\`\`\`"+(first?"asciimath"+String(literal.length):"")+"\n"+input.substring(position+1, input.length)
 		first=!first
 		position=input.indexOf(literal)
 	}
