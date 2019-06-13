@@ -7,6 +7,13 @@
 npm install -g caou
 ```
 
+## Usage
+```
+caou file.md # Generates file.pdf
+```
+
+For more information, run `man caou`.
+
 ## Examples
 ```
 # Header
@@ -20,7 +27,7 @@ Created as dog food for myself cause I hate latex, use at your own risk.
 
 ## Implementation
 Algorithm:
-1. Convert new elements (€...€) to md blocks
+1. Convert new elements (€...€) to special md elements
 2. Parse markdown using pandoc
 3. Modify pandoc's internal representation of the text to apply the changes needed (including the transformation from asciiMath to latex)
 4. Transform it into the output format using pandoc
