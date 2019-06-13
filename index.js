@@ -5,8 +5,12 @@ const path = require('path')
 const child_process = require("child_process");
 const process = require('process');
 
+if(process.argv.length<=2 || process.argv.includes("--help") || process.argv.includes("-h")){
+	printHelp()
+	return
+}
+
 const inputFile = process.argv[process.argv.length - 1].replace(/tex$/, "md") //For TeXstudio
-//const inputFile = process.argv[process.argv.length - 1]
 
 let typesetter = "pdflatex"
 
@@ -16,7 +20,13 @@ if(process.argv.includes("--tex")){
 	process.argv.splice(pos, 2)
 }
 
-let input = fs.readFileSync(inputFile, 'utf-8')
+let input=""
+try{
+	input = fs.readFileSync(inputFile, 'utf-8')
+} catch(e) {
+	console.warn("Error: file "+inputFile+" does not exist")
+	return
+}
 
 input=replaceLiteral(input, "€€")
 input=replaceLiteral(input, "€")
@@ -56,4 +66,8 @@ function replaceLiteral(input, literal){
 		position=input.indexOf(literal)
 	}
 	return input
+}
+
+function printHelp(){
+	child_process.exec("groff -man -Tascii "+path.join(__dirname, "man", "caou.1"), (error, stdout, stderr) => console.log(stdout))
 }
