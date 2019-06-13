@@ -48,7 +48,7 @@ const extension = filename.pop()
 
 fs.writeFileSync(filename+".cautex", result)
 
-child_process.spawnSync(typesetter, process.argv.slice(2,-1).concat([filename+".cautex"]))
+child_process.spawnSync(typesetter, process.argv.slice(2,-1).concat([filename+".cautex"]), { stdio: 'inherit' })
 
 function replaceLiteral(input, literal){
 	let position=input.indexOf(literal)
