@@ -10,7 +10,7 @@ if(process.argv.length<=2 || process.argv.includes("--help") || process.argv.inc
 	return
 }
 
-const inputFile = process.argv[process.argv.length - 1].replace(/tex$/, "md") //For TeXstudio
+const inputFile = process.argv[process.argv.length - 1] //.replace(/tex$/, "md") //For TeXstudio
 
 let typesetter = "pdflatex"
 

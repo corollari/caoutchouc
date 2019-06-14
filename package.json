@@ -1,6 +1,6 @@
 {
   "name": "caou",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Caoutchouc compiler",
   "main": "index.js",
   "directories": {
