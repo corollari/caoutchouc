@@ -1,0 +1,2 @@
+# caoutchouc
+LaTeX but easy
