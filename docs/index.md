@@ -7,6 +7,7 @@ title: Caoutchouc
 ## What is Caoutchouc?
 Caoutchouc is a typesetting language, like LaTeX, used to format documents.
 <!--If you'd like to try it, just sign in [ShareCaou](http://sharecaou.com) and create an `Example Project`.-->
+Caoutchouc is also the name that the indigineous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
 
 ## Why was it created?
 

@@ -30,7 +30,7 @@ For more information about the `caou` compiler, run `man caou`.
 
 If you'd like to find out more about caoutchouc, go to <https://caoutchouc.io>.
 
-## Caouthcouc example
+## Caoutchouc example
 ```
 # Header
 This is a basic equation €1+2*sqrt(2)-pi+alpha/(3.2-1)€  
@@ -53,6 +53,9 @@ All contributions are welcome but help is specially appreciated in the following
   - Reddit: [@corollari](https://www.reddit.com/user/corollari)
   - Discord @corollari#2127
   - GitHub: Just create an issue in this repo
+
+## Why is it called caoutchouc?
+Caoutchouc is the name that the indigineous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
 
 ## Acknowledgements
 - pandoc, a fundamental component of caoutchouc.
