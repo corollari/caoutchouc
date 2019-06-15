@@ -28,12 +28,17 @@ try{
 	return
 }
 
-input=replaceLiteral(input, "€€")
-input=replaceLiteral(input, "€")
+input=replaceLiteral(input, "€€", "$$asciimath", "asciimath$$")
+input=replaceLiteral(input, "€", "$asciimath", "asciimath$")
+//input=replaceLiteral(input, "$$$", "```{=latex}", "```")
+
+let usepackages
+
+[usepackages, input]=removeUsePackage(input)
 
 const pandocFilterPath = path.join(__dirname, "pandoc-filter.js")
 
-let result = child_process.spawnSync("pandoc", ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks", "-s", "--filter", pandocFilterPath], { input: input }).stdout
+let result = child_process.spawnSync("pandoc", ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks+raw_tex+raw_attribute", "-s", "--filter", pandocFilterPath], { input: input }).stdout
 
 result=String(result)
 
@@ -41,6 +46,8 @@ result=result.replace(/\$\$asciimath/g, "€€")
 result=result.replace(/\$asciimath/g, "€")
 result=result.replace(/asciimath\$\$/g, "€€")
 result=result.replace(/asciimath\$/g, "€")
+
+result=result.replace(/(\\documentclass.*)/g, "$1\n"+usepackages)
 
 
 let filename = path.basename(inputFile).split(".")
@@ -50,22 +57,31 @@ fs.writeFileSync(filename+".cautex", result)
 
 child_process.spawnSync(typesetter, process.argv.slice(2,-1).concat([filename+".cautex"]), { stdio: 'inherit' })
 
-function replaceLiteral(input, literal){
+function replaceLiteral(input, literal, newLiteral1, newLiteral2){
 	let position=input.indexOf(literal)
 	let first=true
-	const delimiter=literal.length==1?"$":"$$"
 	while(position != -1){
 		let newLiteral=""
 		if(first){
-			newLiteral=delimiter+"asciimath"
+			newLiteral=newLiteral1
 		} else {
-			newLiteral="asciimath"+delimiter
+			newLiteral=newLiteral2
 		}
 		input=input.substring(0, position)+newLiteral+input.substring(position+literal.length, input.length)
 		first=!first
 		position=input.indexOf(literal)
 	}
 	return input
+}
+
+function removeUsePackage(input){
+	const usePkg=/\\usepackage{.*}/g
+	let usepackages = []
+	while ((matches = usePkg.exec(input)) !== null) {
+		usepackages.push(matches[0])
+	}
+	input=input.replace(usePkg, "")
+	return [usepackages.join('\n'), input]
 }
 
 function printHelp(){
