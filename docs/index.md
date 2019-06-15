@@ -142,3 +142,5 @@ with
 **Note**: TeXstudio will only work if the files opened with it have the .tex extension, that means that you'll have to use filenames ending with `.tex` but which will contain caoutchouc code.
 
 If you'd like to run your own instance of ShareCaou, check [this repository](https://github.com/corollari/sharecaou) for instructions on how to set it up.
+
+Caoutchouc is open source (MIT licensed), and available [in this github repository](https://github.com/corollari/caoutchouc). Contributions are welcome.
