@@ -34,7 +34,9 @@ If you'd like to find out more about caoutchouc, go to <https://caoutchouc.io>.
 ```
 # Header
 This is a basic equation €1+2*sqrt(2)-pi+alpha/(3.2-1)€  
-More complex things can be done with latex:
+More complex things can be done with LaTeX, which can be directly embedded into the caoutchouc source:
+\usepackage{xcolor}
+\colorbox{red}{Colored text!}
 $$x\overset{\Bbb{R}}{+} y=x\overset{\Bbb{Q}}{+} y$$
 ```
 Also, it automatically includes several latex libraries such as `amsmath`.
