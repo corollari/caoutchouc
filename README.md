@@ -2,6 +2,20 @@
 
 > Markdown for formatting + AsciiMath for math + Latex for the weird stuff
 
+## What is caoutchouc?
+A replacement for LaTeX based on Markdown and AsciiMath.
+
+## Why use caoutchouc?
+Here's the same document written in both LaTeX and Caouthcouc:
+
+| LaTeX                                                                                                                                                                                                                                                                                                                                         | Caouthcouc                                                                 |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| \documentclass{article}<br> \usepackage[utf8]{inputenc}<br> \begin{document}<br> <br>     \section{Introduction}<br> <br>     $$\dfrac{1\cdot \alpha}{2}$$<br> <br>     \begin{figure}<br>         \centering<br>         \includegraphics[width=9cm]{image}<br>         \caption{A caption}<br>     \end{figure}<br> <br> \end{document}<br> | # Introduction<br> <br> €€(1*alpha)/2€€<br> <br> `![A caption](image.png)` |
+
+It's easy to see that the Caouthcouc version is much more **readable**, **easy**, **simple** and **less verbose**.
+
+For a detailed explanation of the improvements that Caouchouc brings over LaTeX, read <https://caoutchouc.io/#why-was-it-created>.
+
 ## Install
 ```
 npm install -g caou
@@ -16,7 +30,7 @@ For more information about the `caou` compiler, run `man caou`.
 
 If you'd like to find out more about caoutchouc, go to <https://caoutchouc.io>.
 
-## Example
+## Caouthcouc example
 ```
 # Header
 This is a basic equation €1+2*sqrt(2)-pi+alpha/(3.2-1)€  
