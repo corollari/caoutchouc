@@ -9,7 +9,32 @@ Caoutchouc is a typesetting language, like LaTeX, used to format documents.
 If you'd like to try it, just sign in [ShareCaou](http://sharecaou.com) and create an `Example Project`.
 
 ## Why was it created?
-Caoutchouc was created to address several problems with LaTeX:
+
+The following is a comparison of the same document written in both Caoutchouc and LaTeX:
+
++-----------------------------------------+------------------------+
+| Latex                                   | Caouthcouc             |
++-----------------------------------------+------------------------+
+|```                                      |```                     |
+|\documentclass{article}                  |                        |
+|\usepackage[utf8]{inputenc}              |                        |
+|\begin{document}                         |                        |
+|                                         |                        |
+|  \section{Introduction}                 |# Introduction          |
+|                                         |                        |
+|  $$\dfrac{1\cdot \alpha}{2}$$           |€€(1*alpha)/2€€         |
+|                                         |                        |
+|  \begin{figure}                         |                        |
+|    \centering                           |                        |
+|    \includegraphics[width=9cm]{image}   |![A caption](image.png) |
+|    \caption{A caption}                  |                        |
+|  \end{figure}                           |                        |
+|                                         |                        |
+|\end{document}                           |                        |
+|```                                      |```                     |
++-----------------------------------------+------------------------+
+
+In the previous comparison we can appreciate several of the problems LaTeX has:
 - **Verbosity**: LaTeX code is very verbose, leading to the following issues:
 	- Finding the bits you want to edit among all the boilerplate is hard
 	- Requires a lot of unnecessary typing
@@ -35,7 +60,7 @@ But along with the reduction in complexity that comes with AsciiMath and markdow
 
 Because of how everything comes together, the **learning curve of Caoutchouc is much more gentle to newcomers**. Typesetting a new document with some math only requires knowledge of how to input math in calculators, which is commonplace, and some markdown, which is extremely simple and easy to learn. As users progress further and want to do more complex things, LaTeX can be introduced progressively.
 
-## How does it work?
+## Caoutchouc cheatsheet
 Here's a self-explanatory example of some caoutchouc code:
 ```
 # Section 1 header
@@ -98,7 +123,10 @@ If you'd like to use it locally, you'll have to install the `caou` compiler:
 	- texlive
 	- the latest version of node and npm
 2. Run `npm -g install caou`
-3. Now you can compile caoutchouc documents to pdf with `caou document.md`, where `document.md` is the name of your caoutchouc-formatted file
+3. Now you can compile caoutchouc documents to pdf by running
+`caou document.md`
+where `document.md` is the name of your caoutchouc-formatted file
+
 Once installed, you can obtain more information about the compiler and its parameters by checking its manpage with `man caou`.
 
 If you'd like to use caoutchouc with TeXStudio:
