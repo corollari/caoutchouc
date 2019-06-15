@@ -25,13 +25,15 @@ Caoutchouc was created to address several problems with LaTeX:
 	- Copy-pasting code snippets from other projects to include new command definitions or packages is commonplace.
 
 ### Solutions
-Caoutchouc uses markdown for all text formatting. Markdown was designed to resemble the formatting that people were already using in emails or forums, therefore it uses a system that evolved natuarally and resembles the way people think about format. This, along the fact that markdown is extremely simple, make for a highly **intuitive** system.
+Caoutchouc uses markdown for all text formatting. Markdown was **designed to resemble the formatting that people were already using in emails and forums**, therefore it uses a system that evolved natuarally and resembles the way people think about format. This, along the fact that markdown is extremely simple, make for a highly intuitive system.
 
-Another of the design goals of Markdown was to enable people to read text directly from markdown code. Therefore markdown-formatted text is content-centric and the **verbosity** of the formatting is low.
+Another of the design goals of Markdown was to **enable people to read text directly from the code**. Therefore markdown-formatted text is content-centric and the verbosity of the formatting is low.
 
-Furthermore, caoutchouc uses AsciiMath for its math formulas, which accepts math the way you would input it in a calculator, which makes it much more **intuitive** and **easy**. When trying to do something new you can usually just attempt a guess on how it works and that will usually work just fine! 
+Furthermore, caoutchouc uses AsciiMath for its math formulas, which **accept math the way you would input it in a calculator**, which makes it much more intuitive and easy. When trying to do something new you can usually just attempt a guess on how it works and that will usually work just fine! 
 
-Because of how everything comes together, the **learning curve** of Caoutchouch is much more gentle for newcommers. Typesetting a new document with some math only requires knowledge of how to input math in calculators, which is commonplace, and some markdown, which is extremely simple and easy to learn. As users progress further and want to do more complex things, LaTeX can be introduced progressively.
+But along with the reduction in complexity that comes with AsciiMath and markdown also comes a reduction in power. This means there are some things which you can do in LaTeX but you can't in markdown, and eventually when typesetting a document it's easy to run into these limitations. To solve this, caoutchouc **allows the direct embedding of LaTeX code in caoutchouc**. This means that, if you come across some problem that can't be solved with the standard configuration, you can always switch to LaTeX and use all of its power.
+
+Because of how everything comes together, the **learning curve of Caoutchouc is much more gentle to newcomers**. Typesetting a new document with some math only requires knowledge of how to input math in calculators, which is commonplace, and some markdown, which is extremely simple and easy to learn. As users progress further and want to do more complex things, LaTeX can be introduced progressively.
 
 ## How does it work?
 Here's a self-explanatory example of some caoutchouc code:
