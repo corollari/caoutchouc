@@ -13,7 +13,7 @@ Caoutchouc is a typesetting language, like LaTeX, used to format documents.
 The following is a comparison of the same document written in both Caoutchouc and LaTeX:
 
 +-----------------------------------------+------------------------+
-| Latex                                   | Caouthcouc             |
+| Latex                                   | Caoutchouc             |
 +-----------------------------------------+------------------------+
 |```                                      |```                     |
 |\documentclass{article}                  |                        |
