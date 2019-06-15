@@ -55,7 +55,7 @@ All contributions are welcome but help is specially appreciated in the following
   - GitHub: Just create an issue in this repo
 
 ## Why is it called caoutchouc?
-Caoutchouc is the name that the indigineous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
+Caoutchouc is the name that the indigenous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
 
 ## Acknowledgements
 - pandoc, a fundamental component of caoutchouc.
