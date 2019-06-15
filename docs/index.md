@@ -50,7 +50,7 @@ In the previous comparison we can appreciate several of the problems LaTeX has:
 	- Copy-pasting code snippets from other projects to include new command definitions or packages is commonplace.
 
 ### Solutions
-Caoutchouc uses markdown for all text formatting. Markdown was **designed to resemble the formatting that people were already using in emails and forums**, therefore it uses a system that evolved natuarally and resembles the way people think about format. This, along the fact that markdown is extremely simple, make for a highly intuitive system.
+Caoutchouc uses markdown for all text formatting. Markdown was **designed to resemble the formatting that people were already using in emails and forums**, therefore it uses a system that evolved naturally and resembles the way people think about format. This, along the fact that markdown is extremely simple, make for a highly intuitive system.
 
 Another of the design goals of Markdown was to **enable people to read text directly from the code**. Therefore markdown-formatted text is content-centric and the verbosity of the formatting is low.
 
