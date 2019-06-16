@@ -13,19 +13,31 @@ before_install:
 install:
   - sudo apt-get install -y python-pip
   - sudo pip install codespell
+  - npm install
 
 script:
   - ./build-docs.sh
   - codespell -q4 *.md
+  - npm run pkg
     # - docker run -ti --rm -v $PWD:/mnt:ro dkhamsing/awesome_bot --allow-dupe --allow-redirect --skip-save-results `find . -name "*.md"`
 
 before_deploy:
   - rm docs/*.md
 
 deploy:
-  provider: pages
-  local_dir: docs
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  on:
-    branch: master
+  - provider: pages
+    local_dir: docs
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+    on:
+      branch: master
+  - deploy:
+    provider: releases
+    api_key: $GITHUB_TOKEN
+    file: 
+    - caou-linux
+    - caou-macos
+    - caou-win.exe
+    skip_cleanup: true
+    on:
+      tags: true

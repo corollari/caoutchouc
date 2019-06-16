@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pkg": "pkg --targets 'node10-linux,node10-macos,node10-win' package.json"
   },
   "bin": {
     "caou": "./index.js"
@@ -35,5 +36,8 @@
   "homepage": "https://github.com/corollari/caoutchouc#readme",
   "dependencies": {
     "pandoc-filter-promisified": "^0.1.0"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.0"
   }
 }
