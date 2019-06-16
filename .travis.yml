@@ -35,8 +35,12 @@ deploy:
     provider: releases
     api_key: $GITHUB_TOKEN
     file: 
-    - index-*
-    - pandoc-filter-*
+    - index-linux
+    - index-macos
+    - index-win.exe
+    - pandoc-filter-linux
+    - pandoc-filter-macos
+    - pandoc-filter-win.exe
     skip_cleanup: true
     on:
       tags: true
