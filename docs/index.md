@@ -113,7 +113,7 @@ Text can be **emphasised**, *in italics*, ~~crossed~~, `verbatim` or include sup
 		\end{cases}
 		$$
 \end{itemize}
-\colorbox{red}{I am trying to understand how the colorbox command works in latex. As you can see, adding the a phrase inside the colorbox command causes the text to exceed the page boundary. However, I want to see a wrap!}
+\colorbox{red}{Colored text!}
 ```
 
 ## How can I use it?
