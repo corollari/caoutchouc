@@ -35,9 +35,8 @@ deploy:
     provider: releases
     api_key: $GITHUB_TOKEN
     file: 
-    - caou-linux
-    - caou-macos
-    - caou-win.exe
+    - index-*
+    - pandoc-filter-*
     skip_cleanup: true
     on:
       tags: true
