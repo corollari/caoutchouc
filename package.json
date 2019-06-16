@@ -8,10 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pkg": "pkg --targets 'node10-linux,node10-macos,node10-win' index.js && pkg --targets 'node10-linux,node10-macos,node10-win' pandoc-filter.js"
+    "pkg": "pkg -o caou --targets 'node10-linux,node10-macos,node10-win' index.js && pkg -o caou-pandoc-filter --targets 'node10-linux,node10-macos,node10-win' pandoc-filter.js"
   },
   "bin": {
-    "caou": "./index.js"
+    "caou": "./index.js",
+    "caou-pandoc-filter": "./pandoc-filter.js"
   },
   "repository": {
     "type": "git",

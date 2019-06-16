@@ -36,9 +36,7 @@ let usepackages
 
 [usepackages, input]=removeUsePackage(input)
 
-const pandocFilterPath = path.join(__dirname, "pandoc-filter.js")
-
-let result = child_process.spawnSync("pandoc", ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks+raw_tex+raw_attribute", "-s", "--filter", pandocFilterPath], { input: input }).stdout
+let result = child_process.spawnSync("pandoc", ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks+raw_tex+raw_attribute", "-s", "--filter", "caou-pandoc-filter"], { input: input }).stdout
 
 result=String(result)
 
