@@ -6,7 +6,7 @@ title: Caoutchouc
 
 ## What is Caoutchouc?
 Caoutchouc is a typesetting language, like LaTeX, used to format documents.
-<!--If you'd like to try it, just sign in [ShareCaou](http://sharecaou.com) and create an `Example Project`.-->
+If you'd like to try it, just sign in [ShareCaou](http://sharecaou.com) and create an `Example Project`.
 Caoutchouc is also the name that the indigenous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
 
 ## Why was it created?
@@ -116,7 +116,7 @@ Text can be **emphasised**, *in italics*, ~~crossed~~, `verbatim` or include sup
 ```
 
 ## How can I use it?
-<!--The easiest way to use it is by using [ShareCaou](http://sharecaou.com), a website that includes everything needed to get started along an easy to use interface.-->
+The easiest way to use it is by using [ShareCaou](http://sharecaou.com), a website that includes everything needed to get started along an easy to use interface.
 
 If you'd like to use it locally, you'll have to install the `caou` compiler:
 1. Install the prerequisites:
