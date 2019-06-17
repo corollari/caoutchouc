@@ -17,7 +17,7 @@ It's easy to see that the Caoutchouc version is much more **readable**, **easy**
 For a detailed explanation of the improvements that Caouchouc brings over LaTeX, read [Why was caoutchouc created?](https://caoutchouc.io/#why-was-it-created).
 
 ## Try it!
-Go to [ShareCaou](http://sharecaou.com) and login using:
+Go to [ShareCaou.com](http://sharecaou.com/login) and login using:
 ```
 email: test@test.com
 password: caoutchouc
