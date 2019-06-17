@@ -17,6 +17,7 @@ It's easy to see that the Caoutchouc version is much more **readable**, **easy**
 For a detailed explanation of the improvements that Caouchouc brings over LaTeX, read <https://caoutchouc.io/#why-was-it-created>.
 
 ## Install
+**Pre-requisites**: A local installation of [pandoc 2.2.1](https://github.com/jgm/pandoc/releases/tag/2.2.1) and texlive.
 ```
 npm install -g caou
 ```
