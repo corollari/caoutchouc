@@ -48,6 +48,6 @@ All contributions are welcome but help is specially appreciated in the following
 Caoutchouc is the name that the indigenous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
 
 ## Acknowledgements
-- pandoc, a fundamental component of caoutchouc.
+- Pandoc is a fundamental component of caoutchouc.
 - The code used to convert asciimath to latex was taken from [here](https://github.com/asciimath/asciimathml/blob/master/asciimath-based/ASCIIMathTeXImg.js). For more information check the License text in `ASCIIMathTeXImg.js`.
 
