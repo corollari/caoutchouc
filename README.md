@@ -34,7 +34,7 @@ If you'd like to find out more about caoutchouc, go to [caoutchouc.io](https://c
 ## Caoutchouc example
 | Caoutchouc | Result |
 |------------|--------|
-|# Caoutchouc <br><br>- \*\*Markdown\*\*[^1]<br>- \*\*Math\*\* made easy: €1+2\*sqrt(2)-pi+alpha/(3.2-1)€<br> - \*\*LaTeX*\* can be directly embedded:<br>\usepackage{xcolor}<br>\colorbox{red}{Colored text!}<br><br>$$x\overset{\Bbb{R}}{+} y=x\overset{\Bbb{Q}}{+} y$$<br><br>[^1]: extended with footnotes and many other goodies from pandoc-flavoured markdown | ![Pdf representation](example.png) |
+|# Caoutchouc <br><br>- \*\*Markdown\*\*[^1]<br>- \*\*Math\*\* made easy: €1+2\*sqrt(2)-pi+alpha/(3.2-1)€<br> - \*\*LaTeX*\* can be directly embedded:<br>\usepackage{xcolor}<br>\colorbox{red}{Colored text!}<br><br>$$x\overset{\Bbb{R}}{+} y=x\overset{\Bbb{Q}}{+} y$$<br><br>[^1]: extended with footnotes and many other goodies from pandoc-flavoured markdown | ![Pdf representation](example.png) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 
 Go to <https://caoutchouc.io> for proper documentation.
 
