@@ -14,7 +14,7 @@ Here's the same document written in both LaTeX and Caoutchouc:
 
 It's easy to see that the Caoutchouc version is much more **readable**, **easy**, **simple** and **less verbose**.
 
-For a detailed explanation of the improvements that Caouchouc brings over LaTeX, read <https://caoutchouc.io/#why-was-it-created>.
+For a detailed explanation of the improvements that Caouchouc brings over LaTeX, read [Why was caoutchouc created?](https://caoutchouc.io/#why-was-it-created).
 
 ## Install
 **Pre-requisites**: A local installation of [pandoc 2.2.1](https://github.com/jgm/pandoc/releases/tag/2.2.1) and texlive.
@@ -29,7 +29,7 @@ caou file.md # Generates file.pdf
 
 For more information about the `caou` compiler, run `man caou`.
 
-If you'd like to find out more about caoutchouc, go to <https://caoutchouc.io>.
+If you'd like to find out more about caoutchouc, go to [caoutchouc.io](https://caoutchouc.io).
 
 ## Caoutchouc example
 | Caoutchouc | Result |
