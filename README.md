@@ -55,6 +55,11 @@ All contributions are welcome but help is specially appreciated in the following
 ## Why is it called caoutchouc?
 Caoutchouc is the name that the indigenous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
 
+## What makes caoutchouc different from plain pandoc?
+- **AsciiMath**: pandoc doesn't support it, caoutchouc does.
+- **LaTeX**: caoutchouc supports the direct embedding of LaTeX but pandoc doesn't (it does in an undocumented way which is extremely limited, caoutchouc improves this).
+- **Ease of use**: ShareCaou makes caoutchouc much easier to use for most people compared to pandoc (which at the very least requires a local installation of pandoc & texlive).
+
 ## Acknowledgements
 - Pandoc is a fundamental component of caoutchouc.
 - The code used to convert asciimath to latex was taken from [here](https://github.com/asciimath/asciimathml/blob/master/asciimath-based/ASCIIMathTeXImg.js). For more information check the License text in `ASCIIMathTeXImg.js`.
