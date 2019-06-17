@@ -45,16 +45,9 @@ Go to <https://caoutchouc.io> for proper documentation.
 
 ## Contributing
 All contributions are welcome but help is specially appreciated in the following tasks:
-- [ ] Set up scalable hosting for [ShareCaou](https://github.com/corollari/sharecaou) (currently it's in a simple vps. I can pay for all the hosting costs) and/or improve the build system (right now it's just a bunch of instructions, dockerizing it or even just creating an automated script that did everything would be awesome).
-- [ ] Create a logo for Caoutchouc
-- [ ] Spread the word
-- [ ] Provide feedback on how to improve it, bugs that you find... You can contact me wherever you prefer:
-  - Email: <me@albert.sh>
-  - Telegram: @corollari
-  - Twitter: [@corolari](https://twitter.com/corolari) (I'm not active but notifications reach me)
-  - Reddit: [@corollari](https://www.reddit.com/user/corollari)
-  - Discord @corollari#2127
-  - GitHub: Just create an issue in this repo
+- [ ] Set up scalable hosting for [ShareCaou](https://github.com/corollari/sharecaou) (currently it's in a simple vps). I can pay for all the hosting costs.
+- [ ] Create a logo for Caoutchouc (primary use will be in ShareCaou).
+- [ ] Provide feedback on how to improve it, bugs that you find...
 
 ## Why is it called caoutchouc?
 Caoutchouc is the name that the indigenous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).
