@@ -10,7 +10,7 @@ Here's the same document written in both LaTeX and Caoutchouc:
 
 | LaTeX                                                                                                                                                                                                                                                                                                                                         | Caoutchouc                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| \documentclass{article}<br> \usepackage[utf8]{inputenc}<br> \begin{document}<br> <br>     \section{Introduction}<br> <br>     $$\dfrac{1\cdot \alpha}{2}$$<br> <br>     \begin{figure}<br>         \centering<br>         \includegraphics[width=9cm]{image}<br>         \caption{A caption}<br>     \end{figure}<br> <br> \end{document}<br> | <br><br><br><br># Introduction<br> <br> €€(1*alpha)/2€€<br> <br><br><br> `![A caption](image.png)` <br><br><br><br><br> |
+| \documentclass{article}<br> \usepackage[utf8]{inputenc}<br> \begin{document}<br> <br>     \section{Introduction}<br> <br>     $$\dfrac{1\cdot \alpha}{2}$$<br> <br>     \begin{figure}<br>         \centering<br>         \includegraphics[width=9cm]{image}<br>         \caption{A caption}<br>     \end{figure}<br> <br> \end{document}<br> | <br><br><br><br># Introduction<br> <br> €€(1*alpha)/2€€<br> <br><br><br> \!\[A caption](image.png) <br><br><br><br><br> |
 
 It's easy to see that the Caoutchouc version is much more **readable**, **easy**, **simple** and **less verbose**.
 
@@ -33,9 +33,7 @@ If you'd like to find out more about caoutchouc, go to <https://caoutchouc.io>.
 ## Caoutchouc example
 | Caoutchouc | Result |
 |------------|--------|
-|# Caoutchouc <br>- **Markdown**[^1]<br>- **Math** made easy: €1+2*sqrt(2)-pi+alpha/(3.2-1)€<br> - **LaTeX** can be directly embedded:<br>\usepackage{xcolor}<br>\colorbox{red}{Colored text!}<br>$$x\overset{\Bbb{R}}{+} y=x\overset{\Bbb{Q}}{+} y$$<br><br>[^1]: extended with footnotes and many other goodies from pandoc-flavoured markdown | ![Pdf representation](example.png) |
-
-Also, it automatically includes several latex libraries such as `amsmath`.
+|# Caoutchouc <br><br>- \*\*Markdown\*\*[^1]<br>- \*\*Math\*\* made easy: €1+2\*sqrt(2)-pi+alpha/(3.2-1)€<br> - \*\*LaTeX*\* can be directly embedded:<br>\usepackage{xcolor}<br>\colorbox{red}{Colored text!}<br><br>$$x\overset{\Bbb{R}}{+} y=x\overset{\Bbb{Q}}{+} y$$<br><br>[^1]: extended with footnotes and many other goodies from pandoc-flavoured markdown | ![Pdf representation](example.png) |
 
 Go to <https://caoutchouc.io> for proper documentation.
 
