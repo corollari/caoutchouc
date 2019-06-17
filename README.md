@@ -16,6 +16,14 @@ It's easy to see that the Caoutchouc version is much more **readable**, **easy**
 
 For a detailed explanation of the improvements that Caouchouc brings over LaTeX, read [Why was caoutchouc created?](https://caoutchouc.io/#why-was-it-created).
 
+## Try it!
+Go to [ShareCaou](http://sharecaou.com) and login using:
+```
+email: test@test.com
+password: caoutchouc
+```
+The site could be slow and may collapse under heavy load, as it's running on a basic VPS.
+
 ## Install
 **Pre-requisites**: A local installation of [pandoc 2.2.1](https://github.com/jgm/pandoc/releases/tag/2.2.1) and texlive.
 ```
