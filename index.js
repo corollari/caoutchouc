@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const child_process = require("child_process");
 const process = require('process');
+const BinWrapper = require('bin-wrapper');
 
 if(process.argv.length<=2 || process.argv.includes("--help") || process.argv.includes("-h")){
 	printHelp()
@@ -28,32 +29,59 @@ try{
 	return
 }
 
-input=replaceLiteral(input, "€€", "$$asciimath", "asciimath$$")
-input=replaceLiteral(input, "€", "$asciimath", "asciimath$")
-//input=replaceLiteral(input, "$$$", "```{=latex}", "```")
+// Get pandoc
+const pandocBaseUrl = "https://github.com/corollari/caoutchouc/raw/master/vendor"
+const pandoc = new BinWrapper()
+	.src(`${pandocBaseUrl}/osx/pandoc`, 'darwin')
+    .src(`${pandocBaseUrl}/linux/pandoc`, 'linux')
+    .src(`${pandocBaseUrl}/win/x86/pandoc.exe`, 'win32', 'x86')
+    .src(`${pandocBaseUrl}/win/x64/pandoc.exe`, 'win32', 'x64')
+    .dest(path.join(__dirname, 'pandoc'))
+    .use(process.platform === 'win32' ? 'pandoc.exe' : 'pandoc')
 
-let usepackages
+if(fs.existsSync(pandoc.path())){
+	compile(input, typesetter, inputFile, pandoc.path())
+} else {
+	console.log('⧗ Downloading Pandoc (~20-50MB depending on OS). This may take a minute or so.');
+	(async () => {
+		try{
+			await pandoc.run(['--version'])
+		} catch(e){
+			console.error('✗ pandoc installation failed')
+			return 1
+		}
+		compile(input, typesetter, inputFile, pandoc.path())
+	})();
+}
 
-[usepackages, input]=removeUsePackage(input)
+function compile(input, typesetter, inputFile, pandocPath){
+	input=replaceLiteral(input, "€€", "$$asciimath", "asciimath$$")
+	input=replaceLiteral(input, "€", "$asciimath", "asciimath$")
+	//input=replaceLiteral(input, "$$$", "```{=latex}", "```")
 
-let result = child_process.spawnSync("pandoc", ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks+raw_tex+raw_attribute", "-s", "--filter", "caou-pandoc-filter"], { input: input }).stdout
+	let usepackages
 
-result=String(result)
-
-result=result.replace(/\$\$asciimath/g, "€€")
-result=result.replace(/\$asciimath/g, "€")
-result=result.replace(/asciimath\$\$/g, "€€")
-result=result.replace(/asciimath\$/g, "€")
-
-result=result.replace(/(\\documentclass.*)/g, "$1\n"+usepackages)
+	[usepackages, input]=removeUsePackage(input)
 
 
-let filename = path.basename(inputFile).split(".")
-const extension = filename.pop()
+	let result = child_process.spawnSync(pandocPath, ["-t", "latex", "-f", "markdown+lists_without_preceding_blankline+hard_line_breaks+raw_tex+raw_attribute", "-s", "--filter", "caou-pandoc-filter"], { input: input }).stdout
 
-fs.writeFileSync(filename+".cautex", result)
+	result=String(result)
 
-child_process.spawnSync(typesetter, process.argv.slice(2,-1).concat([filename+".cautex"]), { stdio: 'inherit' })
+	result=result.replace(/\$\$asciimath/g, "€€")
+	result=result.replace(/\$asciimath/g, "€")
+	result=result.replace(/asciimath\$\$/g, "€€")
+	result=result.replace(/asciimath\$/g, "€")
+
+	result=result.replace(/(\\documentclass.*)/g, "$1\n"+usepackages)
+
+	let filename = path.basename(inputFile).split(".")
+	const extension = filename.pop()
+
+	fs.writeFileSync(filename+".cautex", result)
+
+	child_process.spawnSync(typesetter, process.argv.slice(2,-1).concat([filename+".cautex"]), { stdio: 'inherit' })
+}
 
 function replaceLiteral(input, literal, newLiteral1, newLiteral2){
 	let position=input.indexOf(literal)
