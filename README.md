@@ -25,7 +25,7 @@ password: caoutchouc
 The site could be slow and may collapse under heavy load, as it's running on a basic VPS.
 
 ## Install
-**Pre-requisites**: A local installation of [pandoc 2.2.1](https://github.com/jgm/pandoc/releases/tag/2.2.1) and texlive.
+**Pre-requisites**: A local installation of texlive.
 ```
 npm install -g caou
 ```
