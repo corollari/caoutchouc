@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Caoutchouc</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel='shortcut icon' href='favicon.png' />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Caoutchouc</h1>
+</header>
+<h2 id="latex-but-easy" class="subtitle">LaTeX but easy</h2>
+<h2 id="what-is-caoutchouc">What is Caoutchouc?</h2>
+<p>Caoutchouc is a typesetting language, like LaTeX, used to format documents.<br />
+Caoutchouc is also the name that the indigenous people of South America used for the rubber material that is obtained from vulcanizing latex (the tree sap).</p>
+<p>If you’d like to try it, just sign in <a href="http://sharecaou.com">ShareCaou</a> and create an <code>Example Project</code>.</p>
+<h2 id="why-was-it-created">Why was it created?</h2>
+<p>The following is a comparison of the same document written in both Caoutchouc and LaTeX:</p>
+<table style="width:93%;">
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Latex</td>
+<td>Caoutchouc</td>
+</tr>
+<tr class="even">
+<td><pre><code>\documentclass{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+  \section{Introduction}
+
+  $$\dfrac{1\cdot \alpha}{2}$$
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=9cm]{image}
+    \caption{A caption}
+  \end{figure}
+
+\end{document}</code></pre></td>
+<td><pre><code>
+
+
+
+# Introduction
+
+€€(1*alpha)/2€€
+
+
+
+![A caption](image.png)
+
+
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>In the previous comparison we can appreciate several of the problems LaTeX has:</p>
+<ul>
+<li><strong>Verbosity</strong>: LaTeX code is very verbose, leading to the following issues:
+<ul>
+<li>Finding the bits you want to edit among all the boilerplate is hard</li>
+<li>Requires a lot of unnecessary typing</li>
+<li>It’s annotation-centric, making it really hard to read text from the LaTeX source</li>
+</ul></li>
+<li><strong>Difficulty</strong>: Writing LaTeX is hard
+<ul>
+<li>A lot of commands in LaTeX are unnecessarily complex and long. This means that LaTeX users have to memorize them by hard in order to use LaTeX proficiently</li>
+<li>Commands are not intuitive, which leads to LaTeX writing sessions full of googling commands or copy-pasting code from other documents (which also increases verbosity)</li>
+<li>The learning curve is really steep</li>
+</ul></li>
+<li><strong>Non-trivial setup</strong>: Creating a new document requires initial setup
+<ul>
+<li>At the very least the creation of new documents has to include adding <code>\begin{document}</code> and many other commands. This makes the use of non-latex-adapted text editors really hard, as you either have to type all of this or copy-paste it from somewhere else.</li>
+<li>Copy-pasting code snippets from other projects to include new command definitions or packages is commonplace.</li>
+</ul></li>
+</ul>
+<h3 id="solutions">Solutions</h3>
+<p>Caoutchouc uses markdown for all text formatting. Markdown was <strong>designed to resemble the formatting that people were already using in emails and forums</strong>, therefore it uses a system that evolved naturally and resembles the way people think about format. This, along the fact that markdown is extremely simple, make for a highly intuitive system.</p>
+<p>Another of the design goals of Markdown was to <strong>enable people to read text directly from the code</strong>. Therefore markdown-formatted text is content-centric and the verbosity of the formatting is low.</p>
+<p>Furthermore, caoutchouc uses AsciiMath for its math formulas, which <strong>accept math the way you would input it in a calculator</strong>, which makes it much more intuitive and easy. When trying to do something new you can usually just attempt a guess on how it works and that will usually work just fine!</p>
+<p>But along with the reduction in complexity that comes with AsciiMath and markdown also comes a reduction in power. This means there are some things which you can do in LaTeX but you can’t in markdown, and eventually when typesetting a document it’s easy to run into these limitations. To solve this, caoutchouc <strong>allows the direct embedding of LaTeX code in caoutchouc</strong>. This means that, if you come across some problem that can’t be solved with the standard configuration, you can always switch to LaTeX and use all of its power.</p>
+<p>Because of how everything comes together, the <strong>learning curve of Caoutchouc is much more gentle to newcomers</strong>. Typesetting a new document with some math only requires knowledge of how to input math in calculators, which is commonplace, and some markdown, which is extremely simple and easy to learn. As users progress further and want to do more complex things, LaTeX can be introduced progressively.</p>
+<h2 id="caoutchouc-cheatsheet">Caoutchouc cheatsheet</h2>
+<p>Here’s a self-explanatory example of some caoutchouc code:</p>
+<pre><code># Section 1 header
+## Section 2 header
+#### Section 4 header
+
+Math can be typed the way you&#39;d in a calculator €1+2*sqrt(2)-pi+alpha/(3.2-1)€
+
+Adding images is easy too
+![This is the figure&#39;s caption](figure.png)
+
+- Lists
+    - can
+    - be
+    - formatted
+        - like
+- this
+
+1. Or ordered,
+2. like 
+3. this
+
+- [ ] or even like this
+- [x] checked
+
+~~~~~~~
+// This is a code block
+if(code-block){
+  writeSomeCode();
+}
+~~~~~~~
+
+Text can be **emphasised**, *in italics*, ~~crossed~~, `verbatim` or include super^scripts^ and under~scripts~.
+
+[Links are simple too](https://caoutchouc.io) 
+
+\usepackage{xcolor}
+\begin{itemize}
+    \item And if you want to do something else,
+    \item you can always use LaTeX directly
+    \item anywhere
+    \item
+        $$
+        f_j&#39;(a):=
+        \begin{cases}
+        f_j(a) &amp;\text{ if } f_j(a)\leq K \text{ and}\\
+        K &amp;\text{ if } K&lt;f_j(a)\\
+        \end{cases}
+        $$
+\end{itemize}
+\colorbox{red}{Colored text!}</code></pre>
+<h2 id="how-can-i-use-it">How can I use it?</h2>
+<p>The easiest way to use it is by using <a href="http://sharecaou.com">ShareCaou</a>, a website that includes everything needed to get started along an easy to use interface.</p>
+<p>If you’d like to use it locally, you’ll have to install the <code>caou</code> compiler:</p>
+<ol type="1">
+<li>Install the prerequisites:
+<ul>
+<li>pandoc</li>
+<li>texlive</li>
+<li>the latest version of node and npm</li>
+</ul></li>
+<li>Run <code>npm -g install caou</code></li>
+<li>Now you can compile caoutchouc documents to pdf by running<br />
+<code>caou document.md</code><br />
+where <code>document.md</code> is the name of your caoutchouc-formatted file</li>
+</ol>
+<p>Once installed, you can obtain more information about the compiler and its parameters by checking its manpage with <code>man caou</code>.</p>
+<p>If you’d like to use caoutchouc with TeXStudio:</p>
+<ol type="1">
+<li>Open TeXStudio</li>
+<li>Open the <code>Options</code> dropdown menu in the top bar and click on <code>Configure TeXStudio...</code></li>
+<li>Click the <code>Commands</code> tab on the left</li>
+<li>Append <code>caou --tex</code> to the beggining of the commands listed.<br />
+For example, for pdflatex you’d replace<br />
+<code>pdflatex -synctex=1 -interaction=nonstopmode %.tex</code><br />
+with<br />
+<code>caou  --tex pdflatex -synctex=1 -interaction=nonstopmode %.tex</code></li>
+</ol>
+<p><strong>Note</strong>: TeXstudio will only work if the files opened with it have the .tex extension, that means that you’ll have to use filenames ending with <code>.tex</code> but which will contain caoutchouc code.</p>
+<p>If you’d like to run your own instance of ShareCaou, check <a href="https://github.com/corollari/sharecaou">this repository</a> for instructions on how to set it up.</p>
+<p>Caoutchouc is open source (MIT licensed), and available <a href="https://github.com/corollari/caoutchouc">in this github repository</a>. Contributions are welcome.</p>
+</body>
+</html>
