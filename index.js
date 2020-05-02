@@ -4,7 +4,6 @@ const fs = require('fs')
 const path = require('path')
 const child_process = require("child_process");
 const process = require('process');
-const BinWrapper = require('bin-wrapper');
 
 if(process.argv.length<=2 || process.argv.includes("--help") || process.argv.includes("-h")){
 	printHelp()
@@ -28,31 +27,6 @@ try{
 	console.warn("Error: file "+inputFile+" does not exist")
 	return
 }
-
-// Get pandoc
-// const pandocBaseUrl = "https://github.com/corollari/caoutchouc/raw/master/vendor"
-// const pandoc = new BinWrapper()
-// 	.src(`${pandocBaseUrl}/osx/pandoc`, 'darwin')
-//     .src(`${pandocBaseUrl}/linux/pandoc`, 'linux')
-//     .src(`${pandocBaseUrl}/win/x86/pandoc.exe`, 'win32', 'x86')
-//     .src(`${pandocBaseUrl}/win/x64/pandoc.exe`, 'win32', 'x64')
-//     .dest(path.join(__dirname, 'pandoc'))
-//     .use(process.platform === 'win32' ? 'pandoc.exe' : 'pandoc')
-// 
-// if(fs.existsSync(pandoc.path())){
-// 	compile(input, typesetter, inputFile, pandoc.path())
-// } else {
-// 	console.log('⧗ Downloading Pandoc (~20-50MB depending on OS). This may take a minute or so.');
-// 	(async () => {
-// 		try{
-// 			await pandoc.run(['--version'])
-// 		} catch(e){
-// 			console.error('✗ pandoc installation failed')
-// 			return 1
-// 		}
-// 		compile(input, typesetter, inputFile, pandoc.path())
-// 	})();
-// }
 
 compile(input, typesetter, inputFile, "pandoc")
 

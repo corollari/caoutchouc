@@ -36,10 +36,9 @@
   },
   "homepage": "https://github.com/corollari/caoutchouc#readme",
   "dependencies": {
-    "bin-wrapper": "^4.1.0",
     "pandoc-filter-promisified": "^0.1.0"
   },
   "devDependencies": {
-    "pkg": "^4.4.0"
+    "pkg": "^4.4.8"
   }
 }
